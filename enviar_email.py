@@ -20,9 +20,9 @@ texto = f"Cotação atualizada!\n\nData: {datetime.now()}\n\nValor da cotação:
 
 #==========================================================================================
 
-remetente = "adrielmedeirosaraujo@gmail.com"
-senha = "gmwk avhw dihk ylxs"
-destinatario = "ama20@discente.ifpe.edu.br"
+remetente = ""
+senha = ""
+destinatario = ""
 assunto = "Cotação Bitcoin"
 corpo = f"{texto}"
 #Preenchimento de campos na prática:
