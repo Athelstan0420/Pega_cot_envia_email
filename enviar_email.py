@@ -5,6 +5,7 @@ from email.mime.multipart import MIMEMultipart #Criar email com várias partes, 
 from email.mime.text import MIMEText # Para colocar os textos dentros dos emails
 import requests
 from datetime import datetime
+import os
 
 
 #==========================================================================================
@@ -20,9 +21,9 @@ texto = f"Cotação atualizada!\n\nData: {datetime.now()}\n\nValor da cotação:
 
 #==========================================================================================
 
-remetente = ""
-senha = ""
-destinatario = ""
+remetente = os.environ["EMAIL_REMETENTE"]
+senha =  os.environ["EMAIL_SENHA"]
+destinatario = os.environ[" EMAIL_DESTINATARIO"]
 assunto = "Cotação Bitcoin"
 corpo = f"{texto}"
 #Preenchimento de campos na prática:
