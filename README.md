@@ -10,7 +10,7 @@ Para fazer deploy do seu código:
 
 - Dentro do arq yml utilize essa estrutura:
 
-      name: Executar script Python diariamente
+      name: Executar script Python diariamente # nome que você dará; 
       
       on:
         schedule:
@@ -30,7 +30,7 @@ Para fazer deploy do seu código:
                 python-version: '3.x'
       
             - name: Instalar dependências
-              run: pip install -r requirements.txt
+              run: pip install -r requirements.txt # adiciona o arq riquerements.txt
       
             - name: Executar script
               env:
@@ -46,7 +46,7 @@ Para fazer deploy do seu código:
     
 - Em seguida vá até o diretório do projeto através do terminal:
   
-         - cd /home/seu/projeto
+        - cd /home/seu/projeto
   
 - No terminal, dentro da pasta digite:
   
