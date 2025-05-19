@@ -39,7 +39,17 @@ Para fazer deploy do seu código:
                 EMAIL_DESTINATARIO: ${{ secrets.EMAIL_DESTINATARIO }}
               run: python enviar_email.py
 
- 
+-----------------------------------------
+- Para verificar quais libs são necessárias para adicionar ao arquivo "riquerements.txt" utilize a lib:
 
+        - pip install pipreqs
+    
+- Em seguida vá até o diretório do projeto através do terminal:
+  
+         - cd /home/seu/projeto
+  
+- No terminal, dentro da pasta digite:
+  
+        - pipreqs . --force 
 
-
+-----------------------------------------
