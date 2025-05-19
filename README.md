@@ -52,3 +52,10 @@ Para fazer deploy do seu código:
   
         - pipreqs . --force 
 -----------------------------------------
+
+- Para adicionar SEGREDOS E VARIÁVEIS:
+
+      - No repositório do Github vá até SETTINGS/CONFIGURAÇÕES,
+        em seguida vá até SEGREDOS E VARIÁVIES, lá você encontrará onde adicionar.
+-----------------------------------------
+
