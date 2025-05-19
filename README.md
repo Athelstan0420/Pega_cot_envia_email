@@ -46,16 +46,17 @@ Para fazer deploy do seu código:
     
 - Em seguida vá até o diretório do projeto através do terminal:
   
-        - cd /home/seu/projeto
+        cd /home/seu/projeto
   
 - No terminal, dentro da pasta digite:
   
-        - pipreqs . --force 
+        pipreqs . --force 
 -----------------------------------------
 
 - Para adicionar SEGREDOS E VARIÁVEIS:
 
-      - No repositório do Github vá até SETTINGS/CONFIGURAÇÕES,
-        em seguida vá até SEGREDOS E VARIÁVIES, lá você encontrará onde adicionar.
+      No repositório do Github vá até SETTINGS/CONFIGURAÇÕES,
+      em seguida vá até SEGREDOS E VARIÁVIES, lá você encontrará onde adicionar.
+
 -----------------------------------------
 
