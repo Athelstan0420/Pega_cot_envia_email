@@ -40,7 +40,7 @@ Para fazer deploy do seu código:
               run: python enviar_email.py
 
 -----------------------------------------
-- Para verificar quais libs são necessárias para adicionar ao arquivo "riquerements.txt" utilize a lib:
+- Para verificar quais libs incluídas no seu projeto que são necessárias para adicionar ao arquivo "riquerements.txt" para o deploy utilize a lib:
 
         - pip install pipreqs
     
@@ -51,5 +51,4 @@ Para fazer deploy do seu código:
 - No terminal, dentro da pasta digite:
   
         - pipreqs . --force 
-
 -----------------------------------------
