@@ -28,7 +28,7 @@ fuso_horario = pytz.timezone("America/Sao_Paulo") #UTC -> padrão 00h
 minha_data_com_fuso = fuso_horario.localize(data_atual) #dada minhda posição de greenwich
 conv_txt = str(minha_data_com_fuso)
 
-texto = f"Cotação atualizada!\n\nData: \n\nValor da cotação: R$ {cot_bitcoin},00"
+texto = f"Cotação atualizada!\n\nData: {conv_txt[:19]} - {conv_txt[-5:]}\n\nValor da cotação: R$ {cot_bitcoin},00"
 
 
 #==========================================================================================
