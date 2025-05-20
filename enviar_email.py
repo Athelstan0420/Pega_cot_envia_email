@@ -28,7 +28,7 @@ conv_txt = str(minha_data_com_fuso)
 
 texto = f"Cotação atualizada!\n\nData: {conv_txt[:19]} - {conv_txt[-5:]} \n\nValor da cotação: R$ {cot_bitcoin},00"
 
-print(texto)
+# print(texto)
 
 #==========================================================================================
 
