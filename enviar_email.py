@@ -4,8 +4,7 @@ import smtplib # Para conectar-se ao servidor e enviar email
 from email.mime.multipart import MIMEMultipart #Criar email com várias partes, texto, anexo, etc
 from email.mime.text import MIMEText # Para colocar os textos dentros dos emails
 import requests
-from datetime import datetime
-import os
+from datetime import *
 
 
 #==========================================================================================
@@ -17,7 +16,19 @@ requisicao = requests.get(api)
 requisicao_dic = requisicao.json()
 cot_bitcoin = requisicao_dic["BTCBRL"]["bid"]
 
-texto = f"Cotação atualizada!\n\nData: {datetime.now()}\n\nValor da cotação: R$ {cot_bitcoin},00"
+data_atual = datetime.now()
+data_em_texto = datetime.strftime(data_atual, "%d/%m/%Y %H:%M") # Pega uma data/hora e transforma em texto;
+
+
+import pytz #Python timezone => tornar qqr data ciente do local dela. 
+# para saber qual sigla utilizar pesquise: "https://en.wikipedia.org/wiki/List_of_tz_database_time_zones"
+fuso_horario = pytz.timezone("America/Sao_Paulo") #UTC -> padrão 00h
+minha_data_com_fuso = fuso_horario.localize(data_atual) #dada minhda posição de greenwich
+conv_txt = str(minha_data_com_fuso)
+
+texto = f"Cotação atualizada!\n\nData: {conv_txt[:19]} - {conv_txt[-5:]} \n\nValor da cotação: R$ {cot_bitcoin},00"
+
+print(texto)
 
 #==========================================================================================
 
