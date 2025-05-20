@@ -6,6 +6,7 @@ from email.mime.text import MIMEText # Para colocar os textos dentros dos emails
 import requests
 from datetime import *
 import os
+import pytz
 
 
 #==========================================================================================
