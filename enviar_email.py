@@ -42,7 +42,7 @@ texto_html = f"""
                 <li>
                   <p>{conv_txt[:19]} - {conv_txt[-5:]}</p>
                 </li>
-              <ul>
+              </ul>
             </li>
             <li>
               <h3>Valor da cotação:</h3>
