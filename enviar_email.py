@@ -33,19 +33,12 @@ texto_html = f"""
       <meta charset="utf-8">
     </head>
     <body>
-
       <div>
-      
-      
-
         <div> 
-
           <hr>
           <h2> Olá! este email envia diariamente a cotação do bitcoin para você. <img src="{imagem2}"> </h2>
           <hr>
-
           <ul>
-
             <li>
               <h3>Data de atualização:</h3>
               <ul>
@@ -54,8 +47,6 @@ texto_html = f"""
                 </li>
               <ul>
             </li>
-
-
             <li>
               <h3>Valor da cotação:</h3>
               <ul>
@@ -67,31 +58,21 @@ texto_html = f"""
                 </li>
               </ul>
             </li>
-
-          </ul> 
-          
-          
+          </ul>           
           <hr>
         </div> 
-
         <p>Atenciosamente,<br>Adriel Araújo</p>
-
-
       </div>
-
     </body>
   </html>
 """
-
-
-
 # texto = f"Cotação atualizada!\n\nData: {conv_txt[:19]} - {conv_txt[-5:]} \n\nValor da cotação: R$ {fatiamento}"
 # texto = {texto_html}
 #==========================================================================================
 
-remetente = os.environ["EMAIL_REMETENTE"]
-senha =  os.environ["EMAIL_SENHA"]
-destinatario = os.environ["EMAIL_DESTINATARIO"]
+remetente = "adrielmedeirosaraujo@gmail.com"
+senha = "gmwk avhw dihk ylxs"
+destinatario = "erikaandrade734@gmail.com"
 assunto = "Atualizando a cotação: bitcoin" 
 
 # Cria a mensagem com texto e anexo
