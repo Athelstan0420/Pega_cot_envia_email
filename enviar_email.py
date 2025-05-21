@@ -1,3 +1,5 @@
+
+#==========================================================================================
 import smtplib
 from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
@@ -5,25 +7,22 @@ import requests
 from datetime import *
 import os
 import pytz
-
 #==========================================================================================
-
 api = "https://economia.awesomeapi.com.br/last/USD-BRL,EUR-BRL,BTC-BRL"
 requisicao = requests.get(api)
 requisicao_dic = requisicao.json()
 cot_bitcoin = requisicao_dic["BTCBRL"]["bid"]
 conv_str = str(cot_bitcoin)
 fatiamento = conv_str[:3] + ',' + conv_str[3:] + ',00'
-
+#==========================================================================================
 data_atual = datetime.now()
 fuso_horario = pytz.timezone("America/Sao_Paulo")
 minha_data_com_fuso = fuso_horario.localize(data_atual)
 conv_txt = str(minha_data_com_fuso)
-
-
+#==========================================================================================
 imagem = "https://cdn.investing.com/crypto-logos/20x20/v2/bitcoin.png"
-# TRATAR A IMAGEM:
-
+#==========================================================================================
+#==========================================================================================
 texto_html = f"""
 <!DOCTYPE html>
   <html lang="pt-br">
@@ -56,7 +55,7 @@ texto_html = f"""
                 </li>
               </ul>
             </li>
-          </ul>           
+          </ul> 
           <hr>
         </div> 
         <p>Atenciosamente,<br>Adriel Araújo</p>
@@ -64,8 +63,11 @@ texto_html = f"""
     </body>
   </html>
 """
+
 # texto = f"Cotação atualizada!\n\nData: {conv_txt[:19]} - {conv_txt[-5:]} \n\nValor da cotação: R$ {fatiamento}"
 # texto = {texto_html}
+
+#==========================================================================================
 #==========================================================================================
 
 remetente = os.environ["EMAIL_REMETENTE"]
@@ -87,3 +89,6 @@ servidor.login(remetente, senha)
 servidor.sendmail(remetente, destinatario, mensagem.as_string())
 servidor.quit()
 print("Enviado com sucesso!")
+
+#==========================================================================================
+
