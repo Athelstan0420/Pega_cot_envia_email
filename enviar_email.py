@@ -89,9 +89,9 @@ texto_html = f"""
 # texto = {texto_html}
 #==========================================================================================
 
-remetente = "adrielmedeirosaraujo@gmail.com"
-senha = "gmwk avhw dihk ylxs"
-destinatario = "ama20@discente.ifpe.edu.br"
+remetente = os.environ["EMAIL_REMETENTE"]
+senha =  os.environ["EMAIL_SENHA"]
+destinatario = os.environ["EMAIL_DESTINATARIO"]
 assunto = "Atualizando a cotação: bitcoin" 
 
 # Cria a mensagem com texto e anexo
