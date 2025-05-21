@@ -1,13 +1,10 @@
-#==========================================================================================
-
-import smtplib # Para conectar-se ao servidor e enviar email
-from email.mime.multipart import MIMEMultipart #Criar email com várias partes, texto, anexo, etc
-from email.mime.text import MIMEText # Para colocar os textos dentros dos emails
+import smtplib
+from email.mime.multipart import MIMEMultipart
+from email.mime.text import MIMEText
 import requests
 from datetime import *
 import os
 import pytz
-
 
 #==========================================================================================
 
@@ -19,36 +16,95 @@ conv_str = str(cot_bitcoin)
 fatiamento = conv_str[:3] + ',' + conv_str[3:] + ',00'
 
 data_atual = datetime.now()
-data_em_texto = datetime.strftime(data_atual, "%d/%m/%Y %H:%M") # Pega uma data/hora e transforma em texto;
-
-
-import pytz # Python timezone => tornar qqr data ciente do local dela. 
-# para saber qual sigla utilizar pesquise: "https://en.wikipedia.org/wiki/List_of_tz_database_time_zones"
-fuso_horario = pytz.timezone("America/Sao_Paulo") #UTC -> padrão 00h
-minha_data_com_fuso = fuso_horario.localize(data_atual) #dada minhda posição de greenwich
+fuso_horario = pytz.timezone("America/Sao_Paulo")
+minha_data_com_fuso = fuso_horario.localize(data_atual)
 conv_txt = str(minha_data_com_fuso)
 
-texto = f"Cotação atualizada!\n\nData: {conv_txt[:19]} - {conv_txt[-5:]} \n\nValor da cotação: R$ {fatiamento}"
 
 
+imagem = "/home/adriel/Documentos/email_cotacao_dia_a_dia/Sem título.jpeg"
+imagem2 = "https://cdn.investing.com/crypto-logos/20x20/v2/bitcoin.png"
+# TRATAR A IMAGEM:
+
+texto_html = f"""
+<!DOCTYPE html>
+  <html lang="pt-br">
+    <head>
+      <meta charset="utf-8">
+    </head>
+    <body>
+
+      <div>
+      
+      
+
+        <div> 
+
+          <hr>
+          <h2> Olá! este email envia diariamente a cotação do bitcoin para você. <img src="{imagem2}"> </h2>
+          <hr>
+
+          <ul>
+
+            <li>
+              <h3>Data de atualização:</h3>
+              <ul>
+                <li>
+                  <p>{conv_txt[:19]} - {conv_txt[-5:]}</p>
+                </li>
+              <ul>
+            </li>
+
+
+            <li>
+              <h3>Valor da cotação:</h3>
+              <ul>
+                <li>
+                  <p><b>Bitcoin:</b> R${fatiamento}</p>
+                </li>
+                <li>                 
+                  <a href="https://br.investing.com/crypto"><b>Para mais cotações clique AQUI</b></a>
+                </li>
+              </ul>
+            </li>
+
+          </ul> 
+          
+          
+          <hr>
+        </div> 
+
+        <p>Atenciosamente,<br>Adriel Araújo</p>
+
+
+      </div>
+
+    </body>
+  </html>
+"""
+
+
+
+# texto = f"Cotação atualizada!\n\nData: {conv_txt[:19]} - {conv_txt[-5:]} \n\nValor da cotação: R$ {fatiamento}"
+# texto = {texto_html}
 #==========================================================================================
 
-remetente = os.environ["EMAIL_REMETENTE"]
-senha =  os.environ["EMAIL_SENHA"]
-destinatario = os.environ["EMAIL_DESTINATARIO"]
-assunto = "Cotação Bitcoin"
-corpo = f"{texto}"
-#Preenchimento de campos na prática:
+remetente = "adrielmedeirosaraujo@gmail.com"
+senha = "gmwk avhw dihk ylxs"
+destinatario = "ama20@discente.ifpe.edu.br"
+assunto = "Atualizando a cotação: bitcoin" 
+
+# Cria a mensagem com texto e anexo
 mensagem = MIMEMultipart()
 mensagem["from"] = remetente 
 mensagem["to"] = destinatario
 mensagem["subject"] = assunto
-mensagem.attach(MIMEText(corpo, 'plain'))
-#Protocolo de envio:
-servidor = smtplib.SMTP("smtp.gmail.com", 587)
-servidor.starttls() #Entra no servidor;
-servidor.login(remetente, senha) #Acessa o email;
-servidor.sendmail(remetente, destinatario,mensagem.as_string())#Envia o email;
-servidor.quit() #Fecha o servidor
-print("Enviado com sucesso!")
+mensagem.attach(MIMEText(texto_html, 'html'))
 
+# Envio do e-mail
+servidor = smtplib.SMTP("smtp.gmail.com", 587)
+servidor.starttls()
+servidor.login(remetente, senha)
+servidor.sendmail(remetente, destinatario, mensagem.as_string())
+servidor.quit()
+print("Enviado com sucesso!")
