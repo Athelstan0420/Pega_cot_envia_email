@@ -21,9 +21,7 @@ minha_data_com_fuso = fuso_horario.localize(data_atual)
 conv_txt = str(minha_data_com_fuso)
 
 
-
-imagem = "/home/adriel/Documentos/email_cotacao_dia_a_dia/Sem título.jpeg"
-imagem2 = "https://cdn.investing.com/crypto-logos/20x20/v2/bitcoin.png"
+imagem = "https://cdn.investing.com/crypto-logos/20x20/v2/bitcoin.png"
 # TRATAR A IMAGEM:
 
 texto_html = f"""
@@ -36,7 +34,7 @@ texto_html = f"""
       <div>
         <div> 
           <hr>
-          <h2> Olá! este email envia diariamente a cotação do bitcoin para você. <img src="{imagem2}"> </h2>
+          <h2> Olá! este email envia diariamente a cotação do bitcoin para você. <img src="{imagem}"> </h2>
           <hr>
           <ul>
             <li>
