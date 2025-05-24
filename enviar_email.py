@@ -55,6 +55,15 @@ texto_html = f"""
                 </li>
               </ul>
             </li>
+            <li>
+              <h3>Sites - Notícias sobre economia:</h3>
+              <ul>
+                <li><a href="https://economia.uol.com.br/">https://economia.uol.com.br/</a></li>
+                <li><a href="https://g1.globo.com/economia/">https://g1.globo.com/economia/</a></li>
+                <li><a href="https://www.cnnbrasil.com.br/economia/">https://www.cnnbrasil.com.br/economia/</a></li>
+                <li><a href="https://www.estadao.com.br/economia/">https://www.estadao.com.br/economia/</a></li>
+              </ul>
+            </li>
           </ul> 
           <hr>
         </div> 
