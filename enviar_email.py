@@ -54,7 +54,6 @@ texto_html = f"""
                   <button style="background-color: black;">
                     <a style="color: white;" href="https://br.investing.com/crypto"><b>Para mais cotações clique AQUI</b></a>
                   </button>
-                  <a href="https://br.investing.com/crypto"><b>Para mais cotações clique AQUI</b></a>
                 </li>
               </ul>
             </li>
