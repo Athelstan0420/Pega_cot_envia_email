@@ -51,6 +51,9 @@ texto_html = f"""
                   <p><b>Bitcoin:</b> R${fatiamento}</p>
                 </li>
                 <li>                 
+                  <button style="background-color: black;">
+                    <a style="color: white;" href="https://br.investing.com/crypto"><b>Para mais cotações clique AQUI</b></a>
+                  </button>
                   <a href="https://br.investing.com/crypto"><b>Para mais cotações clique AQUI</b></a>
                 </li>
               </ul>
