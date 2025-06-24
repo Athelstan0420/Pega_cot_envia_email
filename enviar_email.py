@@ -92,8 +92,8 @@ texto_html = f"""
 #==========================================================================================
 
 remetente = "adrielmedeirosaraujo@gmail.com"
-senha = "gmwk avhw dihk ylxs"
-destinatario = "ama20@discente.ifpe.edu.br"
+senha = 
+destinatario = 
 assunto = "Atualizando a cotação: bitcoin" 
 
 # Cria a mensagem com texto e anexo
